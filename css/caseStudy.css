@@ -43,10 +43,10 @@ body {
 /* Title Section */
 .title-section {
   background: #fff;
-  /* padding: 80px 60px; */
-  padding-bottom: 80px;
+  padding: 80px 60px;
+  /* padding-bottom: 80px;
   padding-left: 60px;
-  padding-right: 60px;
+  padding-right: 60px; */
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -283,6 +283,13 @@ strong {
   margin-top: 60px;
 }
 
+.findings-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 50px;
+}
+
 .finding-card {
   background: #fff;
   border: 2px solid #e0e0e0;
@@ -291,22 +298,18 @@ strong {
   transition: all 0.3s ease;
 }
 
-.finding-card:hover {
+/* .finding-card:hover {
   border-color: #c46d8a;
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-}
+} */
 
 .finding-icon {
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 4px;
   background: #c46d8a;
-  border-radius: 12px;
+  border-radius: 2px;
   margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
 }
 
 .finding-card h4 {
@@ -364,6 +367,27 @@ strong {
   margin: 0;
 }
 
+/* Video Container */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 20px 0;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
 .screens-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -383,18 +407,56 @@ strong {
 
 /* Code Block */
 .code-block {
-  background: #1a1a1a;
-  color: #fff;
-  padding: 32px;
+  background: #1a1a2e;
+  color: #c9d1d9;
+  padding: 28px 32px;
   border-radius: 12px;
-  margin: 40px 0;
+  margin: 28px 0;
   overflow-x: auto;
 }
 
+.code-block pre {
+  margin: 0;
+  padding: 0;
+}
+
 .code-block code {
-  font-family: "Monaco", "Courier New", monospace;
-  font-size: 14px;
-  line-height: 1.6;
+  font-family:
+    "JetBrains Mono", "Fira Code", "Monaco", "Courier New", monospace;
+  font-size: 13.5px;
+  line-height: 1.75;
+  white-space: pre;
+  display: block;
+}
+
+.code-keyword {
+  color: #ff79c6;
+}
+.code-fn {
+  color: #8be9fd;
+}
+.code-string {
+  color: #f1fa8c;
+}
+.code-number {
+  color: #bd93f9;
+}
+.code-comment {
+  color: #6272a4;
+  font-style: italic;
+}
+
+/* Challenge Blocks */
+.challenge-block {
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.challenge-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /* Reflection */
@@ -431,6 +493,45 @@ strong {
 
 .reflection-card li:last-child {
   border-bottom: none;
+}
+
+/* Design Decisions within Finding Cards */
+.design-decisions-label {
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #c46d8a !important;
+  font-weight: 700;
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+}
+
+.design-decisions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.design-decisions-list li {
+  padding: 6px 0;
+  padding-left: 20px;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.design-decisions-list li:last-child {
+  border-bottom: none;
+}
+
+.design-decisions-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #c46d8a;
+  font-size: 12px;
 }
 
 /* Background Sections */
